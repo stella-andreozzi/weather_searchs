@@ -3,6 +3,7 @@ const GoogleSearchPage = require('../page_object/google-screen');
 const OpenweathermapAPI = require('../api/weather-api')
 require('chromedriver');
 const assert = require('assert');
+const googleScreen = require('../page_object/google-screen');
 
 async function example() {
    //navigate the app
@@ -16,6 +17,8 @@ async function example() {
 
     const googleTemp = await GoogleSearchPage.getTemp();
     console.log('Google Temperature:', googleTemp);
+
+    await googleScreen.closeBrowser();
 
     const apiTem = await OpenweathermapAPI.getTempfromAPI();
     console.log("API Temp:", apiTem);

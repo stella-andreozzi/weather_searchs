@@ -2,10 +2,9 @@ const {Builder, By, Key} = require('selenium-webdriver');
 const GoogleSearchPage = require('../page_object/google-screen');
 const OpenweathermapAPI = require('../api/weather-api')
 require('chromedriver');
-const assert = require('assert');
 const googleScreen = require('../page_object/google-screen');
 
-async function example() {
+async function compareTemperatureTest() {
    //navigate the app
     await GoogleSearchPage.goToURL();
 
@@ -27,4 +26,4 @@ async function example() {
     console.log("Temperature difference:", tempDifference);
 }
 
-example();
+compareTemperatureTest();
